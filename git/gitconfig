@@ -1,0 +1,77 @@
+[user]
+  email = antoinegrondin@gmail.com
+  name = Antoine Grondin
+
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[alias]
+  remove-missing = "!git ls-files -d -z | xargs -0 git update-index --remove"
+  po = "!git push --set-upstream origin \"$(git rev-parse --abbrev-ref HEAD)\""
+  remove-merged = "!git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d"
+
+  # I like using the interactive mode to make complex commits
+  ai = add --interactive
+
+  # All the aliases relate to commits. Note that
+  # they are grouped by common prefixes, so I don't
+  # confuse what I want done by accident.
+  c = commit
+  # commit with a message
+  cm = commit -m
+  cma = commit -a -m
+  # amending the previous commit
+  ca = commit --amend
+  caa = commit -a --amend -C HEAD
+  cah = commit --amend --reuse-message=HEAD
+  caah = commit --all --amend --reuse-message=HEAD
+  cip = commit -a -m "WIP"
+
+  # Mother of all aliases
+  cap = "!git commit --all --amend --reuse-message=HEAD && git push origin --force"
+
+  # reset
+  ## soft resets
+  r = reset
+  r1 = reset HEAD^
+  r2 = reset HEAD^^
+  ## hard resets
+  rh = reset --hard
+  rh1 = reset HEAD^ --hard
+  rh2 = reset HEAD^^ --hard
+
+  # shortcuts for commands
+  s = status
+  d = diff
+  a = add
+  aa = add -A
+  co = checkout
+  cob = checkout -b
+  b = branch
+  l = log
+  f = fetch
+  r = reset
+  p = push
+    tree = log -n 50 --pretty=\"%C(yellow)%h %Creset %s %C(red)(%cr)%Creset\" --graph
+  pof = push origin --force
+
+  # rebase
+  rim = rebase -i master
+  rcon = rebase --continue
+  rab = rebase --abort
+[push]
+  default = simple

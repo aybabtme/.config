@@ -1,0 +1,2 @@
+# .config
+Configuration files.
