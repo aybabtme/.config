@@ -19,8 +19,14 @@ Plug 'fatih/molokai'
 Plug 'tpope/vim-fugitive'
 Plug 'dag/vim-fish'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 call plug#end()
+
+let g:deoplete#enable_at_startup = 1
 
 set nocompatible
 filetype off
