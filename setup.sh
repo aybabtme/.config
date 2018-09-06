@@ -8,3 +8,6 @@ fi
 ln -s $root/git/gitconfig $HOME/.gitconfig
 ln -s $root/git/gitignore $HOME/.gitignore
 ln -s $root/vim $HOME/.vim 
+
+systemctl --user enable ssh-agent
+systemctl --user start ssh-agent
