@@ -2,6 +2,9 @@
   email = antoinegrondin@gmail.com
   name = Antoine Grondin
 
+[core]
+  excludesfile = ~/.gitignore
+
 [color]
   branch = auto
   diff = auto
