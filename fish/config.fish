@@ -14,6 +14,10 @@ if test -d "/usr/local/sbin"
   set -xg PATH $PATH "/usr/local/sbin"
 end
 
+if test -d "/snap/bin"
+  set -xg PATH $PATH "/snap/bin"
+end
+
 set -xg EDITOR (which vim)
 
 set fish_greeting ""
