@@ -1,4 +1,4 @@
-set -xg GOPATH "$HOME/gocode"
+set -xg GOPATH "$HOME/code"
 set -xg CDPATH $CDPATH "$GOPATH/src" . ~
 set -xg PATH "$GOPATH/bin" $PATH
 
