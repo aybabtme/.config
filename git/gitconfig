@@ -76,5 +76,9 @@
   rim = rebase -i master
   rcon = rebase --continue
   rab = rebase --abort
+
 [push]
   default = simple
+
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
